@@ -1,0 +1,114 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Страница — 1" id="NpPvWq5TvFWyMCa_IUrH">
+    <mxGraphModel dx="702" dy="435" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-2" target="kPlwW_34pGAr4hLW3Y3N-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-2" target="kPlwW_34pGAr4hLW3Y3N-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-2" target="kPlwW_34pGAr4hLW3Y3N-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-2" target="kPlwW_34pGAr4hLW3Y3N-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-2" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: Monaco; color: rgb(242, 242, 242); background-color: rgba(0, 0, 0, 0.85);&quot;&gt;&lt;span class=&quot;s1&quot; style=&quot;font-variant-ligatures: no-common-ligatures;&quot;&gt;Безопасность данных&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;align=center;" parent="1" vertex="1">
+          <mxGeometry x="354" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-3" target="kPlwW_34pGAr4hLW3Y3N-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-3" value="публичные данные" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-4" target="kPlwW_34pGAr4hLW3Y3N-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-4" value="внутренние данные" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-5" target="kPlwW_34pGAr4hLW3Y3N-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-5" value="конфиденциальные данные" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kPlwW_34pGAr4hLW3Y3N-6" target="kPlwW_34pGAr4hLW3Y3N-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-6" value="секретные данные" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-12" value="Данные об объектах недвижимости" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="300" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kPlwW_34pGAr4hLW3Y3N-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-14" value="Данные об объектах недвижимости (витрины продаж)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="300" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kPlwW_34pGAr4hLW3Y3N-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-15" value=" Персональные данные клиентов витрины продаж и клиентов собственников" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="300" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kPlwW_34pGAr4hLW3Y3N-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kPlwW_34pGAr4hLW3Y3N-19" value="Данные онлайн-сделок (витрины продаж)&lt;div&gt;Финансовые данные&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="300" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6YyuwkTche_ORFoIV6hi-18" target="6YyuwkTche_ORFoIV6hi-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-18" value="Риск" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="440" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-24" value="&lt;span class=&quot;s1&quot;&gt;Несанкционированное изменение цен или характеристик может ввести в заблуждение клиентов и нанести ущерб репутации.&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="6YyuwkTche_ORFoIV6hi-18">
+          <mxGeometry x="27" y="16.25" width="90" height="87.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6YyuwkTche_ORFoIV6hi-20" target="6YyuwkTche_ORFoIV6hi-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-20" value="Риск" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-25" value="&lt;span class=&quot;s1&quot;&gt;Утечка персональных данных приведёт к штрафам и потере доверия клиентов.&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="6YyuwkTche_ORFoIV6hi-20">
+          <mxGeometry x="26" y="20" width="94" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6YyuwkTche_ORFoIV6hi-22" target="6YyuwkTche_ORFoIV6hi-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-22" value="Риск" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="440" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-26" value="&lt;span class=&quot;s1&quot;&gt;Кража финансовой информации может привести к финансовым потерям компании и клиентов.&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="6YyuwkTche_ORFoIV6hi-22">
+          <mxGeometry x="28" y="20" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-28" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: Monaco; color: rgb(242, 242, 242); background-color: rgba(0, 0, 0, 0.85); text-align: start;&quot;&gt;&lt;span class=&quot;s1&quot; style=&quot;font-variant-ligatures: no-common-ligatures;&quot;&gt;Эти данные доступны для публичного просмотра на сайте, но внутренняя система управления ими требует защиты от несанкционированных изменений.&lt;/span&gt;&lt;/p&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fontSize=8;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="590" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-29" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: Monaco; color: rgb(242, 242, 242); background-color: rgba(0, 0, 0, 0.85); text-align: start;&quot;&gt;&lt;span class=&quot;s1&quot; style=&quot;font-variant-ligatures: no-common-ligatures;&quot;&gt;Утечка этих данных может привести к серьёзным последствиям, включая мошенничество, а также нарушения законодательства о защите персональных данных.&lt;/span&gt;&lt;/p&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fontSize=8;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="590" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6YyuwkTche_ORFoIV6hi-30" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; line-height: normal; font-family: Monaco; color: rgb(242, 242, 242); background-color: rgba(0, 0, 0, 0.85); text-align: start;&quot;&gt;&lt;span class=&quot;s1&quot; style=&quot;font-variant-ligatures: no-common-ligatures;&quot;&gt;Утечка финансовых данных может привести к значительным убыткам и нарушениям законодательства, связанным с защитой данных платёжных карт.&lt;/span&gt;&lt;/p&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fontSize=8;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="590" width="120" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
