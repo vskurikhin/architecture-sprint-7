@@ -1,0 +1,56 @@
+@startuml
+!include C4.puml
+!include C4_Context.puml
+
+title Диаграмма контекста компании в модели C4
+
+top to bottom direction
+
+Person(accountant, "Бухгалтер", "Ведёт бухгалтерский учёт")
+Person(biAnalyst, "Аналитик BI", "Анализирует данные и готовит отчётность")
+Person(manager, "Менеджер", "Работает с клиентами и объектами недвижимости, администрирует онлайн-сделки")
+Person(businessAnalyst, "Бизнес-аналитик", "Оптимизирует процессы и развивает прикладные бизнес-системы. Администрирует системы")
+Person(client, "Клиент", "Клиент")
+Person(owner, "Собственник", "Клиент")
+
+System(activeDirectory1, "Active Directory", "Служба каталогов, которая обслуживает финансовые сервисы")
+System(activeDirectory2, "Active Directory", "Служба каталогов, которая обслуживает прикладные бизнес-системы и системы обработки данных")
+System(auth, "Регистрация и Аутентификация через REST", "Сервис аутентификации и регистрации")
+System(salesShowcase, "Витрина продаж", "Витрина для подбора и бронирования объектов недвижимости")
+System(showcaseOfServicesOwners, "Мобильные приложения для собственников", "Витрина сервисов для собственников")
+System(accountantService, "Система бухгалтерского учёта")
+System(dwh, "DWH Хранилище", "Физическое хранилище данных DWH")
+
+System_Ext(stateRegistrationAuthorities, "Государственные регистрационные органы", "Отвечают за регистрационные действия с объектами недвижимости")
+System_Ext(housingCommunalServicesResourceProvider, "Поставщик ресурсов ЖКХ")
+System_Ext(paymentProvider, "Платёжная система", "Провайдер онлайн-платежей")
+System_Ext(smartHome, "Умный дом", "Сервисы Интеллектуальный домофон/шлагбаум")
+
+Rel_L(accountant, accountantService, "использует")
+Rel_L(businessAnalyst, showcaseOfServicesOwners, "администрирует")
+Rel_R(businessAnalyst, salesShowcase, "администрирует")
+Rel_L(manager, salesShowcase, "использует")
+Rel(client, salesShowcase, "использует")
+Rel(owner, showcaseOfServicesOwners, "использует")
+Rel_L(biAnalyst, dwh, "использует")
+Rel_D(showcaseOfServicesOwners, auth, "использует")
+Rel_D(salesShowcase, auth, "использует")
+
+Rel_D(dwh, activeDirectory1, "использует")
+Rel_D(showcaseOfServicesOwners, activeDirectory1, "использует")
+Rel_D(salesShowcase, activeDirectory1, "использует")
+Rel_D(showcaseOfServicesOwners, dwh, "сырые данные")
+Rel_D(salesShowcase, dwh, "сырые данные")
+Rel_L(accountantService, activeDirectory2, "использует")
+Rel_L(showcaseOfServicesOwners, housingCommunalServicesResourceProvider, "использует")
+Rel_L(showcaseOfServicesOwners, paymentProvider, "использует")
+Rel_R(salesShowcase, stateRegistrationAuthorities, "использует")
+Rel_D(showcaseOfServicesOwners, smartHome, "использует")
+
+Lay_U(paymentProvider, showcaseOfServicesOwners)
+Lay_U(manager, stateRegistrationAuthorities)
+Lay_U(activeDirectory2, activeDirectory1)
+Lay_R(smartHome, activeDirectory2)
+
+SHOW_FLOATING_LEGEND()
+@enduml
