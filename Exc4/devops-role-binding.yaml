@@ -4,7 +4,7 @@ metadata:
   name: devops-pods
 subjects:
   - kind: User
-    name: devops
+    name: user3
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
