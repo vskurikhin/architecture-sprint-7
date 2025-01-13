@@ -1,0 +1,258 @@
+% kubectl run front-end-app --image=nginx --labels role=front-end --expose --port 80
+service/front-end-app created
+pod/front-end-app created
+
+% kubectl run back-end-api-app --image=nginx --labels role=back-end-api --expose --port 80
+service/back-end-api-app created
+pod/back-end-api-app created
+
+% kubectl run admin-front-end-app --image=nginx --labels role=admin-front-end --expose --port 80
+service/admin-front-end-app created
+pod/admin-front-end-app created
+
+% kubectl run admin-back-end-api-app --image=nginx --labels role=admin-back-end-api --expose --port 80
+service/admin-back-end-api-app created
+pod/admin-back-end-api-app created
+
+% kubectl get all -A
+NAMESPACE     NAME                                           READY   STATUS    RESTARTS        AGE
+default       pod/admin-back-end-api-app                     1/1     Running   0               13s
+default       pod/admin-front-end-app                        1/1     Running   0               27s
+default       pod/back-end-api-app                           1/1     Running   0               67s
+default       pod/front-end-app                              1/1     Running   0               102s
+kube-system   pod/calico-kube-controllers-7fbd86d5c5-zhc9h   1/1     Running   1 (3m ago)      3m21s
+kube-system   pod/calico-node-mbt8p                          1/1     Running   0               3m21s
+kube-system   pod/coredns-6f6b679f8f-bz4bs                   1/1     Running   2 (2m54s ago)   3m21s
+kube-system   pod/etcd-minikube                              1/1     Running   0               3m27s
+kube-system   pod/kube-apiserver-minikube                    1/1     Running   0               3m27s
+kube-system   pod/kube-controller-manager-minikube           1/1     Running   0               3m28s
+kube-system   pod/kube-proxy-jx7p8                           1/1     Running   0               3m21s
+kube-system   pod/kube-scheduler-minikube                    1/1     Running   0               3m27s
+kube-system   pod/storage-provisioner                        1/1     Running   1 (2m51s ago)   3m25s
+
+NAMESPACE     NAME                             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE
+default       service/admin-back-end-api-app   ClusterIP   10.109.63.121    <none>        80/TCP                   13s
+default       service/admin-front-end-app      ClusterIP   10.110.17.206    <none>        80/TCP                   27s
+default       service/back-end-api-app         ClusterIP   10.100.168.106   <none>        80/TCP                   67s
+default       service/front-end-app            ClusterIP   10.111.53.139    <none>        80/TCP                   102s
+default       service/kubernetes               ClusterIP   10.96.0.1        <none>        443/TCP                  3m27s
+kube-system   service/kube-dns                 ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP   3m26s
+
+NAMESPACE     NAME                         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-system   daemonset.apps/calico-node   1         1         1       1            1           kubernetes.io/os=linux   3m25s
+kube-system   daemonset.apps/kube-proxy    1         1         1       1            1           kubernetes.io/os=linux   3m26s
+
+NAMESPACE     NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
+kube-system   deployment.apps/calico-kube-controllers   1/1     1            1           3m25s
+kube-system   deployment.apps/coredns                   1/1     1            1           3m26s
+
+NAMESPACE     NAME                                                 DESIRED   CURRENT   READY   AGE
+kube-system   replicaset.apps/calico-kube-controllers-7fbd86d5c5   1         1         1       3m21s
+kube-system   replicaset.apps/coredns-6f6b679f8f                   1         1         1       3m21s
+
+% kubectl apply -f non-admin-api-allow.yaml
+networkpolicy.networking.k8s.io/default-deny-all created
+networkpolicy.networking.k8s.io/allow-frontend-to-backend created
+networkpolicy.networking.k8s.io/allow-backend-to-frontend created
+networkpolicy.networking.k8s.io/allow-admin-front-end-to-admin-back-end created
+networkpolicy.networking.k8s.io/allow-to-admin-back-end-admin-front-end created
+
+
+% kubectl exec pod/front-end-app -- curl -v back-end-api-app.default.svc.cluster.local
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.100.168.106:80...
+* Connected to back-end-api-app.default.svc.cluster.local (10.100.168.106) port 80 (#0)
+> GET / HTTP/1.1
+> Host: back-end-api-app.default.svc.cluster.local
+> User-Agent: curl/7.88.1
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx/1.27.3
+< Date: Sun, 15 Dec 2024 18:47:30 GMT
+< Content-Type: text/html
+< Content-Length: 615
+< Last-Modified: Tue, 26 Nov 2024 15:55:00 GMT
+< Connection: keep-alive
+< ETag: "6745ef54-267"
+< Accept-Ranges: bytes
+<
+{ [615 bytes data]
+100   615  100   615    0     0   166k      0 --:--:-- --:--:-- --:--:--  200k
+* Connection #0 to host back-end-api-app.default.svc.cluster.local left intact
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+% kubectl exec pod/back-end-api-app -- curl -v front-end-app.default.svc.cluster.local
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.111.53.139:80...
+* Connected to front-end-app.default.svc.cluster.local (10.111.53.139) port 80 (#0)
+> GET / HTTP/1.1
+> Host: front-end-app.default.svc.cluster.local
+> User-Agent: curl/7.88.1
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx/1.27.3
+< Date: Sun, 15 Dec 2024 18:50:06 GMT
+< Content-Type: text/html
+< Content-Length: 615
+< Last-Modified: Tue, 26 Nov 2024 15:55:00 GMT
+< Connection: keep-alive
+< ETag: "6745ef54-267"
+< Accept-Ranges: bytes
+<
+{ [615 bytes data]
+100   615  100   615    0     0  97294      0 --:--:-- --:--:-- --:--:--  100k
+* Connection #0 to host front-end-app.default.svc.cluster.local left intact
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+
+% kubectl exec pod/admin-front-end-app -- curl -v admin-back-end-api-app.default.svc.cluster.local
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.97.43.158:80...
+* Connected to admin-back-end-api-app.default.svc.cluster.local (10.97.43.158) port 80 (#0)
+> GET / HTTP/1.1
+> Host: admin-back-end-api-app.default.svc.cluster.local
+> User-Agent: curl/7.88.1
+> Accept: */*
+>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+< HTTP/1.1 200 OK
+< Server: nginx/1.27.3
+< Date: Sun, 15 Dec 2024 18:12:41 GMT
+< Content-Type: text/html
+< Content-Length: 615
+< Last-Modified: Tue, 26 Nov 2024 15:55:00 GMT
+< Connection: keep-alive
+< ETag: "6745ef54-267"
+< Accept-Ranges: bytes
+<
+{ [615 bytes data]
+100   615  100   615    0     0   280k      0 --:--:-- --:--:-- --:--:--  300k
+* Connection #0 to host admin-back-end-api-app.default.svc.cluster.local left intact
+
+
+
+% kubectl exec pod/admin-back-end-api-app -- curl -v admin-front-end-app.default.svc.cluster.local
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 10.111.129.236:80...
+* Connected to admin-front-end-app.default.svc.cluster.local (10.111.129.236) port 80 (#0)
+> GET / HTTP/1.1
+> Host: admin-front-end-app.default.svc.cluster.local
+> User-Agent: curl/7.88.1
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx/1.27.3
+< Date: Sun, 15 Dec 2024 18:13:05 GMT
+< Content-Type: text/html
+< Content-Length: 615
+< Last-Modified: Tue, 26 Nov 2024 15:55:00 GMT
+< Connection: keep-alive
+< ETag: "6745ef54-267"
+< Accept-Ranges: bytes
+<
+{ [615 bytes data]
+100   615  100   615    0     0   311k      0 --:--:-- --:--:-- --:--:--  600k
+* Connection #0 to host admin-front-end-app.default.svc.cluster.local left intact
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+
+% kubectl run test-$RANDOM --rm -i -t --image=alpine -- sh
+If you don't see a command prompt, try pressing enter.
+E1215 21:50:34.182154   48309 websocket.go:296] Unknown stream id 1, discarding message
+/ # wget -S admin-front-end-app.default.svc.cluster.local -O -
+wget: bad address 'admin-front-end-app.default.svc.cluster.local'
+
